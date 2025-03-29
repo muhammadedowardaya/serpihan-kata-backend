@@ -10,7 +10,7 @@ export class PushService {
     private readonly redisService: RedisService,
   ) {
     webPush.setVapidDetails(
-      this.configService.get('EMAIL') as string,
+      'mailto:muhammadedowardaya@gmail.com',
       this.configService.get('VAPID_PUBLIC_KEY') as string,
       this.configService.get('VAPID_PRIVATE_KEY') as string,
     );
