@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RedisController } from './redis.controller';
+import { RedisService } from './redis.service';
 
 describe('RedisController', () => {
   let controller: RedisController;
@@ -7,6 +8,17 @@ describe('RedisController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [RedisController],
+      providers: [
+        RedisService,
+        {
+          provide: 'REDIS_CLIENT',
+          useValue: {
+            get: jest.fn(),
+            set: jest.fn(),
+            del: jest.fn(),
+          }, // Mock Redis Client
+        },
+      ],
     }).compile();
 
     controller = module.get<RedisController>(RedisController);
