@@ -11,8 +11,8 @@ export class PushService {
   ) {
     webPush.setVapidDetails(
       'mailto:muhammadedowardaya@gmail.com',
-      this.configService.get('VAPID_PUBLIC_KEY') as string,
-      this.configService.get('VAPID_PRIVATE_KEY') as string,
+      'BCV8zg3L26yg1Rk02xxuj7ndww2lpLlt7mM-mhhBsUv41ySNTO2XLWQYSrrDMssYJze4x3JE-yqYCQyY3U13sT4',
+      'VYkgHnM3iP3ECBSx03tBTg1Oja6kx-vGgokkU8zeD4o',
     );
   }
 
